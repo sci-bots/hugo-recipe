@@ -1,17 +1,16 @@
+{% set version = '0.31.1' %}
 package:
   name: hugo
-  version: 0.31.1
+  version: {{ version }}
 
 build:
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 0
+  number: 1
 
-requirements:
-  build:
-    - python
-    - pywget
+test:
+  commands:
+    - hugo --help
 
-    - 7za
-
-
+source:
+  url: https://github.com/gohugoio/hugo/releases/download/v{{ version }}/hugo_{{ version }}_Windows-32bit.zip
