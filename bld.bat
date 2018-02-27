@@ -18,5 +18,5 @@ set EXE_PATH=%CONDA_PREFIX%/library/opt/%PKG_NAME%/%PKG_NAME%.exe
 set BAT_PATH=%PREFIX%/Scripts/%PKG_NAME%.bat
 echo @echo off >> "%BAT_PATH%"
 if errorlevel 1 exit 1
-echo "%EXE_PATH%" %* >> "%BAT_PATH%"
+echo "%EXE_PATH%" %%* >> "%BAT_PATH%"
 if errorlevel 1 exit 1
